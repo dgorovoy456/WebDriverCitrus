@@ -19,12 +19,12 @@ public class BaseTest {
     //@BeforeTest
     @BeforeClass
             public void beforeClass () {
-        //System.setProperty("webdriver.chrome.driver", "/home/dhorovyi/Downloads/chromedriver_linux64/chromedriver");
-        System.setProperty("webdriver.gecko.driver", "/home/dhorovyi/Downloads/geckodriver-v0.26.0-linux64/geckodriver");
+        System.setProperty("webdriver.chrome.driver", "/home/dhorovyi/Downloads/chromedriver_linux64/chromedriver");
+//        System.setProperty("webdriver.gecko.driver", "/home/dhorovyi/Downloads/geckodriver-v0.26.0-linux64/geckodriver");
     }
     @BeforeMethod
     public void beforeMethod () {
-//        ChromeOptions chromeOptions = new ChromeOptions();
+        ChromeOptions chromeOptions = new ChromeOptions();
 //        chromeOptions.setBinary("/usr/bin/google-chrome");
 //        chromeOptions.addArguments("--whitelist-ip *");
 //        chromeOptions.addArguments("--proxy-server='direct://'");
@@ -35,7 +35,7 @@ public class BaseTest {
 //        chromeOptions.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
 //        chromeOptions.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
 //        driver = new ChromeDriver(chromeOptions);
-        driver = new FirefoxDriver();
+//        driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.citrus.ua/");
