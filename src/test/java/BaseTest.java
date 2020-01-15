@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
@@ -18,21 +19,23 @@ public class BaseTest {
     //@BeforeTest
     @BeforeClass
             public void beforeClass () {
-        System.setProperty("webdriver.chrome.driver", "/home/dhorovyi/Downloads/chromedriver_linux64/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/home/dhorovyi/Downloads/chromedriver_linux64/chromedriver");
+        System.setProperty("webdriver.gecko.driver", "/home/dhorovyi/Downloads/geckodriver-v0.26.0-linux64/geckodriver");
     }
     @BeforeMethod
     public void beforeMethod () {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setBinary("/usr/bin/google-chrome");
-        chromeOptions.addArguments("--whitelist-ip *");
-        chromeOptions.addArguments("--proxy-server='direct://'");
-        chromeOptions.addArguments("--proxy-bypass-list=*");
-        chromeOptions.addArguments("--no-sandbox");
-        chromeOptions.addArguments("--disable-dev-shm-usage");
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//        chromeOptions.setBinary("/usr/bin/google-chrome");
+//        chromeOptions.addArguments("--whitelist-ip *");
+//        chromeOptions.addArguments("--proxy-server='direct://'");
+//        chromeOptions.addArguments("--proxy-bypass-list=*");
+//        chromeOptions.addArguments("--no-sandbox");
+//        chromeOptions.addArguments("--disable-dev-shm-usage");
 //        chromeOptions.addArguments("--headless"); //!!!should be enabled for Jenkins
 //        chromeOptions.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
 //        chromeOptions.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
-        driver = new ChromeDriver(chromeOptions);
+//        driver = new ChromeDriver(chromeOptions);
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.citrus.ua/");
