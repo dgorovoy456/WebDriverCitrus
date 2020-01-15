@@ -27,6 +27,7 @@ public class BaseTest {
         chromeOptions.addArguments("--proxy-server='direct://'");
         chromeOptions.addArguments("--proxy-bypass-list=*");
         chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
 //        chromeOptions.addArguments("--headless"); //!!!should be enabled for Jenkins
 //        chromeOptions.addArguments("--disable-dev-shm-usage"); //!!!should be enabled for Jenkins
 //        chromeOptions.addArguments("--window-size=1920x1080"); //!!!should be enabled for Jenkins
