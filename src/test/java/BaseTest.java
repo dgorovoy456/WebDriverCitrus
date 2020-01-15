@@ -16,7 +16,7 @@ public class BaseTest {
     //@BeforeTest
     @BeforeClass
             public void beforeClass () {
-        System.setProperty("webdriver.chrome.driver", getClass().getClassLoader().getResource("chromedriver").getPath());
+        System.setProperty("webdriver.chrome.driver", "/home/dhorovyi/Downloads/chromedriver_linux64/chromedriver");
     }
     @BeforeMethod
     public void beforeMethod () {
