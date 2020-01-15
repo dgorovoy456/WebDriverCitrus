@@ -23,6 +23,7 @@ public class BaseTest {
     @BeforeMethod
     public void beforeMethod () {
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setBinary("/usr/bin/google-chrome");
         chromeOptions.addArguments("--whitelist-ip *");
         chromeOptions.addArguments("--proxy-server='direct://'");
         chromeOptions.addArguments("--proxy-bypass-list=*");
