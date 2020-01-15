@@ -26,6 +26,7 @@ public class BaseTest {
         chromeOptions.addArguments("--whitelist-ip *");
         chromeOptions.addArguments("--proxy-server='direct://'");
         chromeOptions.addArguments("--proxy-bypass-list=*");
+        chromeOptions.addArguments("--no-sandbox");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
