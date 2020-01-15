@@ -23,6 +23,8 @@ public class BaseTest {
     public void beforeMethod () {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--whitelist-ip *");
+        chromeOptions.addArguments("--proxy-server='direct://'");
+        chromeOptions.addArguments("--proxy-bypass-list=*");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
